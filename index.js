@@ -4,7 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const port = process.env.PORT || 3000;
-const docker = require('./docker');
+const createDocker = require('./docker');
+const docker = new createDocker();
 
 app.listen(port, () => console.log(`I'm listening on port ${port}`));
 
