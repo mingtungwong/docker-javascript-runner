@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.post('/code', (req, res, next) => {
+app.post('/', (req, res, next) => {
     const { code, tests } = req.body;
     docker.runCommand(code, tests).then(results => res.send(results));
 })
